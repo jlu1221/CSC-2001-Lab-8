@@ -25,6 +25,14 @@ public class ComparisonSort {
      */
     public static int[] createRandom (int capacity) {
         //TODO: implement
+        if (capacity >= 0) {
+            int[] result = new int[capacity];
+            int randomNum = (int)(Math.random() * capacity);
+            for (int i = 0; i <= result.length; i++){
+                result[i] = randomNum;
+            }
+            return result;
+        }
         return null;
     }
     /**
@@ -34,6 +42,15 @@ public class ComparisonSort {
      */
     public static int insertionSort (int[] list) {
         //TODO: implement
+        if (list.length > 0){
+            for (int i = list.length-1; i>= 0; i--){
+                if (list[i] < list[i-1]){
+                    int temp = list[i-1];
+                    list[i-1] = list[i];
+                    list[i] = temp;
+                }
+            }
+        }
         return 0;
     }
     /**

@@ -10,7 +10,7 @@ public class ComparisonSort {
     public static void main(){
         int capacity;
         //TODO: ask user to enter the capacity
-         
+
         //TODO: call the method createRandom and pass capacity
 
         //TODO: call methods of sort algorithm  you implemented and Arrays.sort()

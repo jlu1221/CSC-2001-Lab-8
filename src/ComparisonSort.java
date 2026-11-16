@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**********************
 Name(s): Jordan Lu, Joanna Li
 
@@ -8,12 +10,16 @@ Sources you used:
 ***********************/
 public class ComparisonSort {
     public static void main(){
+        Scanner scanner = new Scanner(System.in);
         int capacity;
         //TODO: ask user to enter the capacity
+        System.out.print("Enter the array capacity");
+        capacity = scanner.nextInt();
 
         //TODO: call the method createRandom and pass capacity
+        int[] unsortedList = createRandom(capacity);
 
-        //TODO: call methods of sort algorithm  you implemented and Arrays.sort()
+        //TODO: call methods of sort algorithm you implemented and Arrays.sort()
         // by passing sorted and unsorted arrays
 
 

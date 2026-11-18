@@ -16,7 +16,7 @@ public class ComparisonSort {
         Scanner scanner = new Scanner(System.in);
         int capacity;
         //TODO: ask user to enter the capacity
-        System.out.print("Enter the array capacity");
+        System.out.print("Enter the array capacity: ");
         capacity = scanner.nextInt();
 
         //TODO: call the method createRandom and pass capacity
@@ -86,19 +86,19 @@ public class ComparisonSort {
     public static int insertionSort (int[] list) {
         //TODO: implement
         int comparisons = 0;
-        if (list.length > 0){
-            for (int i = 1; i < list.length; i++){
+        if (list.length > 0) {
+            for (int i = 1; i < list.length; i++) {
                 int temp = list[i];
-                for (int j = i-1; j>=0; j--){
+                for (int j = i-1; j>=0; j--) {
                     comparisons++;
-                    if (temp < list[j]){
+                    if (temp < list[j]) {
                         list[j+1] = list[j];
                         list[j] = temp;
-                    }else{
+                    }
+                    else {
                         break;
                     }
                 }
-
             }
         }
         return comparisons;
@@ -110,9 +110,10 @@ public class ComparisonSort {
      */
     public static int mergeSort (int[] list) {
         //TODO: implement
+        if (list.length <= 1) {
+            return 0;
+        }
 
-
-        if (list.length <= 1) {return 0;}
         int middle = list.length/2;
         int comparisons = 0;
         int[] arr1 = Arrays.copyOfRange(list, 0, middle);
@@ -123,6 +124,7 @@ public class ComparisonSort {
         comparisons += merge(list, arr1, arr2);
         return comparisons;
     }
+
     public static int merge(int[] list, int[] arr1, int[] arr2) {
         int i = 0, j = 0, k = 0, comparisons = 0;
 
@@ -131,7 +133,8 @@ public class ComparisonSort {
             if (arr1[i] <= arr2[j]) {
                 list[k] = arr1[i];
                 i++;
-            } else {
+            }
+            else {
                 list[k] = arr2[j];
                 j++;
             }
@@ -151,6 +154,4 @@ public class ComparisonSort {
         }
         return comparisons;
     }
-
-
 }

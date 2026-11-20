@@ -16,7 +16,7 @@ public class ComparisonSort {
         Scanner scanner = new Scanner(System.in);
         int capacity;
         //TODO: ask user to enter the capacity
-        System.out.print("Enter the array capacity");
+        System.out.print("Enter the array capacity: ");
         capacity = scanner.nextInt();
 
         //TODO: call the method createRandom and pass capacity
@@ -151,6 +151,4 @@ public class ComparisonSort {
         }
         return comparisons;
     }
-
-
 }

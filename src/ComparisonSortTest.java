@@ -1,8 +1,29 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 
 public class ComparisonSortTest {
+
+    @Test
+    public void constructorTest(){
+        assertNotNull(new ComparisonSort());
+    }
+
+    @Test
+    public void mainTest(){
+        InputStream originalIn = System.in;
+        try{
+            System.setIn(new ByteArrayInputStream("10\n".getBytes()));
+            assertDoesNotThrow(() -> ComparisonSort.main());
+
+            System.setIn(new ByteArrayInputStream("-1\n".getBytes()));
+            assertDoesNotThrow(() -> ComparisonSort.main());
+        } finally {
+            System.setIn(originalIn);
+        }
+    }
+
     @Test
     public void createRandomTest(){
         int[] res1 = ComparisonSort.createRandom(100);
@@ -29,6 +50,11 @@ public class ComparisonSortTest {
         int comparisons3 = ComparisonSort.insertionSort(list3);
         assertArrayEquals(new int[] {6,6,6,7,7,7}, list3);
         assertEquals(8, comparisons3);
+
+        int[] list4 = {1,2,3,4,5};
+        int comparisons4 = ComparisonSort.insertionSort(list4);
+        assertArrayEquals(new int[] {1,2,3,4,5}, list4);
+        assertEquals(4, comparisons4);
     }
 
     @Test
@@ -48,4 +74,6 @@ public class ComparisonSortTest {
         assertArrayEquals(new int[] {6,6,6,7,7,7}, list3);
         assertEquals(9, comparisons3);
     }
+
+
 }

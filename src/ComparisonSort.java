@@ -8,7 +8,7 @@ Name(s): Jordan Lu, Joanna Li
 
 Responsibilities Descriptions: 
 
-Sources you used:
+Sources you used: partner 
 
 ***********************/
 public class ComparisonSort {
